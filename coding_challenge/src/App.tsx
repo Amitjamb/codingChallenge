@@ -1,24 +1,35 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import InputText from './Components/InputText';
+import RadioButton from './Components/RadioButton';
+import DatePickerComponent from './Components/DatePicker';
+import TextField from './Components/TextField';
+import Checkbox from './Components/Checkbox';
 
 function App() {
+  const radioButtonValue = [
+    {
+      id: "1",
+      name: "yes",
+      value: "yes",
+      label: "Yes"
+    },
+    {
+      id: "2",
+      name: "no",
+      value: "no",
+      label: "no"
+    },
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+        <RadioButton payload={radioButtonValue} />
+        <DatePickerComponent />
+        <TextField />
+        <Checkbox />
+      </div>
     </div>
   );
 }
